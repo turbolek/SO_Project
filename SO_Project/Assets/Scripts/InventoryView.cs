@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class InventoryView : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class InventoryView : MonoBehaviour
 
     private void OnEnable()
     {
-        PopulateInventory();
+        DisplayInventory();
     }
 
     private void OnDisable()
@@ -20,7 +21,7 @@ public class InventoryView : MonoBehaviour
         ClearInventory();
     }
 
-    private void PopulateInventory()
+    public void DisplayInventory()
     {
         ClearInventory();
         foreach (Item item in _inventory.Items)
@@ -41,4 +42,21 @@ public class InventoryView : MonoBehaviour
 
         _itemViews.Clear();
     }
+
+
+    [SerializeField]
+    private Item _itemToAdd;
+
+    [Button]
+    public void AddItem()
+    {
+        _inventory.AddItem(_itemToAdd);
+    }
+
+    [Button]
+    public void RemoveItem()
+    {
+        _inventory.RemoveItem(_itemToAdd);
+    }
+
 }

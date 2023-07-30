@@ -27,4 +27,5 @@ public class InventoryItemView : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
 }

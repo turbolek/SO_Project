@@ -396,6 +396,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8612673627066747734, guid: c1fa203f71bd2f342b95230e2afe65f2, type: 3}
   m_PrefabInstance: {fileID: 5539714332844109914}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &961417418 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5000200256208427416, guid: c1fa203f71bd2f342b95230e2afe65f2, type: 3}
+  m_PrefabInstance: {fileID: 5539714332844109914}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961417414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb78d2e5203b734b9c5be79b2e7e072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &961417419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,6 +433,34 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &961417420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961417414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66b3dce0c01476499dc8ed76625ae3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggerEvent: {fileID: 11400000, guid: bbebec91dc364654e9e0d7b388e83eb1, type: 2}
+  _responseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 961417418}
+        m_TargetAssemblyTypeName: InventoryView, Assembly-CSharp
+        m_MethodName: DisplayInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1100472493
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,4 +667,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7925896597960233698, guid: c1fa203f71bd2f342b95230e2afe65f2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 961417419}
+    - targetCorrespondingSourceObject: {fileID: 7925896597960233698, guid: c1fa203f71bd2f342b95230e2afe65f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 961417420}
   m_SourcePrefab: {fileID: 100100000, guid: c1fa203f71bd2f342b95230e2afe65f2, type: 3}
