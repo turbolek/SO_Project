@@ -15,34 +15,56 @@ public class DemandPoint : MonoBehaviour
     private DemandData _data;
     private bool _itemAccepted;
 
+    public bool IsActive { get; private set; }
+
     private CancellationTokenSource _cancellationTokenSource;
 
     public DemandPoint(DemandData data)
     {
         _data = data;
+        IsActive = false;
     }
 
-    public async Task StartNewDemand()
+    public void Activate()
     {
-        CancelCurrentDemand();
+        if (!IsActive)
+        {
+            IsActive = true;
+            DemandTask();
+        }
+    }
 
+    public void Deactivate()
+    {
+        if (IsActive)
+        {
+            IsActive = false;
+            _cancellationTokenSource = new CancellationTokenSource();
+        }
+    }
+
+    private async Task DemandTask()
+    {
         _cancellationTokenSource = new CancellationTokenSource();
-        await DelayTask(_cancellationTokenSource.Token);
 
-        if (!_cancellationTokenSource.IsCancellationRequested)
+        while (IsActive)
         {
-            DemandStarted?.Invoke(this);
-            await DemandTask(_cancellationTokenSource.Token);
-        }
+            await AwaitDelayTask(_cancellationTokenSource.Token);
 
-        if (_cancellationTokenSource.IsCancellationRequested)
-        {
-            CancelDemand();
-        }
-        else
-        {
-            CompleteDemand();
-            StartNewDemand();
+            if (!_cancellationTokenSource.IsCancellationRequested)
+            {
+                DemandStarted?.Invoke(this);
+                await AwaitItemTask(_cancellationTokenSource.Token);
+            }
+
+            if (_cancellationTokenSource.IsCancellationRequested)
+            {
+                CancelDemand();
+            }
+            else
+            {
+                CompleteDemand();
+            }
         }
     }
 
@@ -56,7 +78,7 @@ public class DemandPoint : MonoBehaviour
         DemandCompleted?.Invoke(this);
     }
 
-    private async Task DelayTask(CancellationToken cancellationToken)
+    private async Task AwaitDelayTask(CancellationToken cancellationToken)
     {
         float timer = UnityEngine.Random.Range(_data.MinTime, _data.MaxTime);
 
@@ -67,7 +89,7 @@ public class DemandPoint : MonoBehaviour
         }
     }
 
-    private async Task DemandTask(CancellationToken cancellationToken)
+    private async Task AwaitItemTask(CancellationToken cancellationToken)
     {
         while (!_itemAccepted)
         {
@@ -95,10 +117,5 @@ public class DemandPoint : MonoBehaviour
     private void RejectItem(Item item)
     {
         ItemRejected?.Invoke(this, item);
-    }
-
-    private void CancelCurrentDemand()
-    {
-        _cancellationTokenSource?.Cancel();
     }
 }

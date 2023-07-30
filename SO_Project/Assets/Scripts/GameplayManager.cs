@@ -16,6 +16,7 @@ public class GameplayManager : MonoBehaviour
     {
         foreach (DemandPointAvatar demandPointAvatar in _demandPointAvatars)
         {
+            demandPointAvatar.Initialize();
             demandPointAvatar.Activate();
         }
     }

@@ -6,7 +6,7 @@ public class DemandPointAvatar : MonoBehaviour
     private DemandPointData _data;
     private DemandPoint _demandPoint;
 
-    private void Start()
+    public void Initialize()
     {
         _demandPoint = new DemandPoint(_data.DemandData);
 
@@ -24,7 +24,7 @@ public class DemandPointAvatar : MonoBehaviour
 
     public void Activate()
     {
-        _demandPoint.StartNewDemand();
+        _demandPoint.Activate();
     }
 
     private void OnDemandStarted(DemandPoint demandPoint)
