@@ -28,7 +28,7 @@ public class GameplayManager : SerializedMonoBehaviour
     {
         foreach (IResetable resetable in _resetables)
         {
-            resetable.Reset();
+            resetable.ResetMe();
         }
     }
 }

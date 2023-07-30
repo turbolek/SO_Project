@@ -12,4 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e2fc8389de3c743ae23eb7f08d7fdd, type: 3}
   m_Name: PlayerInventoryCapacity
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 8e44d87523f33f542a03fe419fd44367, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: DefaultState
+      Entry: 10
+      Data: 0
   Value: 5
