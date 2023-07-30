@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -395,6 +395,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5004264291182885029, guid: 69120448fa8293a478d3cdc6334c25e7, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 5004264291182885029, guid: 69120448fa8293a478d3cdc6334c25e7, type: 3}
+    - target: {fileID: 5004264291182885029, guid: 69120448fa8293a478d3cdc6334c25e7, type: 3}
       propertyPath: _demandPointAvatars.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -410,6 +414,26 @@ PrefabInstance:
       propertyPath: _demandPointAvatars.Array.data[2]
       value: 
       objectReference: {fileID: 809608568}
+    - target: {fileID: 5004264291182885029, guid: 69120448fa8293a478d3cdc6334c25e7, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004264291182885029, guid: 69120448fa8293a478d3cdc6334c25e7, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[0]
+      value: '"path":"_resetables","value":{"$id":0,"$type":"IResetable[], Assembly-CSharp","$rlength":1,"$rcontent":[$eref:0]}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004264291182885029, guid: 69120448fa8293a478d3cdc6334c25e7, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[1]
+      value: '"path":"_resetables.[0]","value":$eref:0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004264291182885029, guid: 69120448fa8293a478d3cdc6334c25e7, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004264291182885029, guid: 69120448fa8293a478d3cdc6334c25e7, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 45b2e7177a828264aa48cb11ede1ebb0, type: 2}
     - target: {fileID: 5219364671441769893, guid: 69120448fa8293a478d3cdc6334c25e7, type: 3}
       propertyPath: m_Name
       value: GameplayManager

@@ -1,14 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class GameplayManager : MonoBehaviour
+public class GameplayManager : SerializedMonoBehaviour
 {
+    [SerializeField]
+    private IResetable[] _resetables;
+
     [SerializeField]
     private DemandPointAvatar[] _demandPointAvatars;
 
     private void Start()
     {
+        ResetGameState();
         StartGame();
     }
 
@@ -18,6 +21,14 @@ public class GameplayManager : MonoBehaviour
         {
             demandPointAvatar.Initialize();
             demandPointAvatar.Activate();
+        }
+    }
+
+    private void ResetGameState()
+    {
+        foreach (IResetable resetable in _resetables)
+        {
+            resetable.Reset();
         }
     }
 }

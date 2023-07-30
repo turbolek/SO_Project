@@ -1,9 +1,12 @@
+using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class Inventory : ScriptableObject
+public class Inventory : SerializedScriptableObject, IResetable
 {
+    public readonly Inventory DefaultState;
+
     public IntValue Capacity;
     public List<Item> Items = new List<Item>();
     public GameEvent InventoryChangedEvent;
@@ -20,4 +23,9 @@ public class Inventory : ScriptableObject
         InventoryChangedEvent?.Raise();
     }
 
+    public void Reset()
+    {
+        Capacity = DefaultState.Capacity;
+        Items = new List<Item>(DefaultState.Items);
+    }
 }
