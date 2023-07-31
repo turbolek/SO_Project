@@ -5,6 +5,7 @@ public class DemandPointAvatar : MonoBehaviour
     [SerializeField]
     private DemandPointData _data;
     private DemandPoint _demandPoint;
+    public DemandPoint DemandPoint => _demandPoint;
 
     public void Initialize()
     {

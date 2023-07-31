@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class DemandPoint : MonoBehaviour
+public class DemandPoint
 {
     public Action<DemandPoint> DemandCompleted;
     public Action<DemandPoint> DemandCanceled;
@@ -15,21 +15,30 @@ public class DemandPoint : MonoBehaviour
     private DemandData _data;
     private bool _itemAccepted;
 
-    public bool IsActive { get; private set; }
+    private bool _isActive;
+    public bool IsActive => _isActive;
 
     private CancellationTokenSource _cancellationTokenSource;
+
+    public enum State
+    {
+        Idle,
+        AwaitingItem
+    }
+
+    private State _state;
 
     public DemandPoint(DemandData data)
     {
         _data = data;
-        IsActive = false;
+        _isActive = false;
     }
 
     public void Activate()
     {
         if (!IsActive)
         {
-            IsActive = true;
+            _isActive = true;
             DemandTask();
         }
     }
@@ -38,7 +47,7 @@ public class DemandPoint : MonoBehaviour
     {
         if (IsActive)
         {
-            IsActive = false;
+            _isActive = false;
             _cancellationTokenSource = new CancellationTokenSource();
         }
     }
@@ -49,13 +58,17 @@ public class DemandPoint : MonoBehaviour
 
         while (IsActive)
         {
+            _state = State.Idle;
+            _itemAccepted = false;
             await AwaitDelayTask(_cancellationTokenSource.Token);
 
             if (!_cancellationTokenSource.IsCancellationRequested)
             {
                 DemandStarted?.Invoke(this);
+                _state = State.AwaitingItem;
                 await AwaitItemTask(_cancellationTokenSource.Token);
             }
+            _state = State.Idle;
 
             if (_cancellationTokenSource.IsCancellationRequested)
             {
@@ -97,9 +110,9 @@ public class DemandPoint : MonoBehaviour
         }
     }
 
-    public void OnItemReceived(Item item)
+    public void DeliverItem(Item item)
     {
-        if (item == _data.Item)
+        if (_state == State.AwaitingItem && item == _data.Item)
         {
             AcceptItem(item);
         }

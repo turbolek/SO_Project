@@ -9,20 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbd2f9caa89f8f84889dc6cf208133d5, type: 3}
-  m_Name: SelectedItem
+  m_Script: {fileID: 11500000, guid: 6959d3c10316fd942aa7f0724c3b204c, type: 3}
+  m_Name: SelectedDemandPoint
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 1fbc635ce9f9e5d43a308671a98576fa, type: 2}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: DefaultState
-      Entry: 10
-      Data: 0
-  Value: {fileID: 11400000, guid: 498e3ed68e567f8478397d37739a361d, type: 2}
+    SerializationNodes: []
+  Value: {fileID: 0}
