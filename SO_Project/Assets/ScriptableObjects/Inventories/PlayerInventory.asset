@@ -33,3 +33,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fec2c87ba7fb3f3428f95f9a5cf803e3, type: 2}
   - {fileID: 11400000, guid: 168cb73355bb3024990a89af4ce024c6, type: 2}
   InventoryChangedEvent: {fileID: 11400000, guid: bbebec91dc364654e9e0d7b388e83eb1, type: 2}
+  InventoryFullEvent: {fileID: 11400000, guid: a7e6d49175908f94a9ade4448fc415a0, type: 2}

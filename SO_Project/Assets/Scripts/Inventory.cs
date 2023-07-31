@@ -9,11 +9,24 @@ public class Inventory : ResetableScriptableObject
     public IntValue Capacity;
     public List<Item> Items = new List<Item>();
     public GameEvent InventoryChangedEvent;
+    public GameEvent InventoryFullEvent;
+
+    public bool HasRoom()
+    {
+        return Capacity.Value > Items.Count;
+    }
 
     public void AddItem(Item item)
     {
-        Items.Add(item);
-        InventoryChangedEvent?.Raise();
+        if (HasRoom())
+        {
+            Items.Add(item);
+            InventoryChangedEvent?.Raise();
+        }
+        else
+        {
+            InventoryFullEvent?.Raise();
+        }
     }
 
     public void RemoveItem(Item item)

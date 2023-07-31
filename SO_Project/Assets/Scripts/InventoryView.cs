@@ -59,4 +59,8 @@ public class InventoryView : MonoBehaviour
         _inventory.RemoveItem(_itemToAdd);
     }
 
+    public void SignalFullState()
+    {
+        Debug.Log("Inventory full! Item not added.");
+    }
 }

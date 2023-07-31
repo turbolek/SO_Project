@@ -9,6 +9,9 @@ public class GameplayManager : SerializedMonoBehaviour
     [SerializeField]
     private DemandPointAvatar[] _demandPointAvatars;
 
+    [SerializeField]
+    private ItemSpawner[] _itemSpawners;
+
     private void Start()
     {
         ResetGameState();
@@ -21,6 +24,11 @@ public class GameplayManager : SerializedMonoBehaviour
         {
             demandPointAvatar.Initialize();
             demandPointAvatar.Activate();
+        }
+
+        foreach (ItemSpawner itemSpawner in _itemSpawners)
+        {
+            itemSpawner.Activate();
         }
     }
 

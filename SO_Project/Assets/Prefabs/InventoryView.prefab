@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1038641232253502812}
   - component: {fileID: 4317320362146701686}
   - component: {fileID: 5000200256208427416}
+  - component: {fileID: 4074277645502275255}
   m_Layer: 5
   m_Name: InventoryView
   m_TagString: Untagged
@@ -91,3 +92,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventory: {fileID: 0}
   _itemViewPrefab: {fileID: 0}
+  _itemToAdd: {fileID: 0}
+--- !u!114 &4074277645502275255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7925896597960233698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66b3dce0c01476499dc8ed76625ae3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggerEvent: {fileID: 11400000, guid: a7e6d49175908f94a9ade4448fc415a0, type: 2}
+  _responseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5000200256208427416}
+        m_TargetAssemblyTypeName: InventoryView, Assembly-CSharp
+        m_MethodName: SignalFullState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
