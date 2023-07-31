@@ -13,6 +13,8 @@ public class DemandPointSelector : MonoBehaviour
     [SerializeField]
     private Camera _camera;
 
+    private Ray _ray;
+
     private void Update()
     {
         if (_selectedItem.Value != null)
@@ -32,11 +34,11 @@ public class DemandPointSelector : MonoBehaviour
     {
         DemandPoint demandPoint = null;
 
-        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+        _ray = _camera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out RaycastHit hitInfo))
+        if (Physics.Raycast(_ray, out RaycastHit hitInfo))
         {
-            DemandPointAvatar avatar = hitInfo.transform.GetComponent<DemandPointAvatar>();
+            DemandPointAvatar avatar = hitInfo.transform.GetComponentInParent<DemandPointAvatar>();
             if (avatar != null)
             {
                 demandPoint = avatar.DemandPoint;
@@ -44,5 +46,10 @@ public class DemandPointSelector : MonoBehaviour
         }
 
         return demandPoint;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawRay(_ray.origin, _ray.direction * 1000);
     }
 }
