@@ -20,6 +20,8 @@ public class DemandPoint
 
     private CancellationTokenSource _cancellationTokenSource;
 
+    private GameEvent _itemDeliveredItem;
+
     public enum State
     {
         Idle,
@@ -28,10 +30,11 @@ public class DemandPoint
 
     private State _state;
 
-    public DemandPoint(DemandData data)
+    public DemandPoint(DemandData data, GameEvent itemDeliveredItem)
     {
         _data = data;
         _isActive = false;
+        _itemDeliveredItem = itemDeliveredItem;
     }
 
     public void Activate()
@@ -125,6 +128,7 @@ public class DemandPoint
     private void AcceptItem(Item item)
     {
         _itemAccepted = true;
+        _itemDeliveredItem?.Raise();
     }
 
     private void RejectItem(Item item)

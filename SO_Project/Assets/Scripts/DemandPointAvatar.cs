@@ -4,12 +4,15 @@ public class DemandPointAvatar : MonoBehaviour
 {
     [SerializeField]
     private DemandPointData _data;
+    [SerializeField]
+    private GameEvent _itemDeliveredEvent;
+
     private DemandPoint _demandPoint;
     public DemandPoint DemandPoint => _demandPoint;
 
     public void Initialize()
     {
-        _demandPoint = new DemandPoint(_data.DemandData);
+        _demandPoint = new DemandPoint(_data.DemandData, _itemDeliveredEvent);
 
         _demandPoint.DemandStarted += OnDemandStarted;
         _demandPoint.DemandCompleted += OnDemandCompleted;

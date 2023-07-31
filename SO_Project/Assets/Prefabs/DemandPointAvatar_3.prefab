@@ -119,3 +119,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: fd37a891e4e163e46936d7e0122cb70a, type: 2}
+  _itemDeliveredEvent: {fileID: 11400000, guid: 7ee8f128fb21f74459bad2f7c067e6f0, type: 2}
