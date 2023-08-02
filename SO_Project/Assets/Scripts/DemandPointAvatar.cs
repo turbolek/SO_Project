@@ -4,12 +4,15 @@ public class DemandPointAvatar : MonoBehaviour
 {
     [SerializeField]
     private DemandPointData _data;
+    public DemandPointData Data => _data;
     [SerializeField]
-    private GameEvent _itemDeliveredEvent;
+    private VoidGameEvent _itemDeliveredEvent;
     [SerializeField]
     private DemandPointAvatarGameEvent _avatarSpawnedEvent;
     [SerializeField]
-    private DemandBubble _bubble;
+    private DemandPointAvatarGameEvent _demandStartedEvent;
+    [SerializeField]
+    private DemandPointAvatarGameEvent _demandCompletedEvent;
 
     private DemandPoint _demandPoint;
     public DemandPoint DemandPoint => _demandPoint;
@@ -26,8 +29,6 @@ public class DemandPointAvatar : MonoBehaviour
         _demandPoint.DemandStarted += OnDemandStarted;
         _demandPoint.DemandCompleted += OnDemandCompleted;
         _demandPoint.ItemRejected += OnItemRejected;
-
-        _bubble.Hide();
     }
 
     private void OnDestroy()
@@ -44,13 +45,13 @@ public class DemandPointAvatar : MonoBehaviour
 
     private void OnDemandStarted(DemandPoint demandPoint)
     {
-        _bubble.Show(_data.DemandData);
+        _demandStartedEvent?.Raise(this);
         Debug.Log("Demand for item: " + _data.DemandData.Item + " started by: " + _data.Name);
     }
 
     private void OnDemandCompleted(DemandPoint demandPoint)
     {
-        _bubble.Hide();
+        _demandCompletedEvent?.Raise(this);
         Debug.Log("Demand completed: " + _data.Name);
     }
 

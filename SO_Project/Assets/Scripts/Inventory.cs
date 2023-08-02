@@ -8,8 +8,8 @@ public class Inventory : ResetableScriptableObject
 
     public IntValue Capacity;
     public List<Item> Items = new List<Item>();
-    public GameEvent InventoryChangedEvent;
-    public GameEvent InventoryFullEvent;
+    public VoidGameEvent InventoryChangedEvent;
+    public VoidGameEvent InventoryFullEvent;
 
     public bool HasRoom()
     {

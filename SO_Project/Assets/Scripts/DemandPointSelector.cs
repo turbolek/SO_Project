@@ -9,7 +9,7 @@ public class DemandPointSelector : MonoBehaviour
     [SerializeField]
     private ItemValue _selectedItem;
     [SerializeField]
-    private GameEvent _demandPointSelectedEvent;
+    private VoidGameEvent _demandPointSelectedEvent;
     [SerializeField]
     private Camera _camera;
 

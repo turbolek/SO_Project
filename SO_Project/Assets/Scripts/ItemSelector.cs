@@ -5,7 +5,7 @@ public class ItemSelector : MonoBehaviour
     [SerializeField]
     private ItemValue _selectedItemValue;
     [SerializeField]
-    private GameEvent _itemSelectedEvent;
+    private VoidGameEvent _itemSelectedEvent;
 
     public void SelectItem(Item item)
     {

@@ -2,11 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class GameEvent : ScriptableObject
+public class VoidGameEvent : ScriptableObject
 {
-    private List<GameEventListener> _listeners = new List<GameEventListener>();
+    private List<VoidGameEventListener> _listeners = new List<VoidGameEventListener>();
 
-    public void RegisterListener(GameEventListener listener)
+    public void RegisterListener(VoidGameEventListener listener)
     {
         if (!_listeners.Contains(listener))
         {
@@ -14,7 +14,7 @@ public class GameEvent : ScriptableObject
         }
     }
 
-    public void UnregisterListener(GameEventListener listener)
+    public void UnregisterListener(VoidGameEventListener listener)
     {
         if (_listeners.Contains(listener))
         {

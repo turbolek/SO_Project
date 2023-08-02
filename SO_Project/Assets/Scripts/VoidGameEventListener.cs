@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameEventListener : MonoBehaviour
+public class VoidGameEventListener : MonoBehaviour
 {
     [SerializeField]
-    private GameEvent _triggerEvent;
+    private VoidGameEvent _triggerEvent;
     [SerializeField]
     private UnityEvent _responseEvent;
 

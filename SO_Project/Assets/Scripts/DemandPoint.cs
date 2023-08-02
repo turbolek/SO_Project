@@ -20,7 +20,7 @@ public class DemandPoint
 
     private CancellationTokenSource _cancellationTokenSource;
 
-    private GameEvent _itemDeliveredItem;
+    private VoidGameEvent _itemDeliveredItem;
 
     public enum State
     {
@@ -30,7 +30,7 @@ public class DemandPoint
 
     private State _state;
 
-    public DemandPoint(DemandData data, GameEvent itemDeliveredItem)
+    public DemandPoint(DemandData data, VoidGameEvent itemDeliveredItem)
     {
         _data = data;
         _isActive = false;
