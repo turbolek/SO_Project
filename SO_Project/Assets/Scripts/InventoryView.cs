@@ -10,6 +10,12 @@ public class InventoryView : MonoBehaviour
     private InventoryItemView _itemViewPrefab;
 
     private List<InventoryItemView> _itemViews = new List<InventoryItemView>();
+    private ObjectPool<InventoryItemView> _itemViewsPool;
+
+    private void Awake()
+    {
+        _itemViewsPool = new ObjectPool<InventoryItemView>(_itemViewPrefab, transform, _inventory.Capacity.Value);
+    }
 
     private void OnEnable()
     {
@@ -26,7 +32,8 @@ public class InventoryView : MonoBehaviour
         ClearInventory();
         foreach (Item item in _inventory.Items)
         {
-            InventoryItemView itemView = Instantiate(_itemViewPrefab, transform);
+            InventoryItemView itemView = _itemViewsPool.GetFromPool(true);
+            itemView.transform.SetAsLastSibling();
             itemView.DisplayItem(item);
             _itemViews.Add(itemView);
         }
@@ -34,10 +41,9 @@ public class InventoryView : MonoBehaviour
 
     private void ClearInventory()
     {
-        //TODO use object pool to avoid garbage creation
-        for (int i = _itemViews.Count - 1; i >= 0; i--)
+        for (int i = 0; i < _itemViews.Count; i++)
         {
-            Destroy(_itemViews[i].gameObject);
+            _itemViewsPool.ReturnToPool(_itemViews[i]);
         }
 
         _itemViews.Clear();
