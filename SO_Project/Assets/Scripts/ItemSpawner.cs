@@ -64,6 +64,5 @@ public class ItemSpawner : MonoBehaviour
     private void SpawnItem()
     {
         _targetInventory.AddItem(_spawnerData.SpawnData.Item);
-        Debug.Log(_spawnerData.Name + "spawned item: " + _spawnerData.SpawnData.Item.Name);
     }
 }

@@ -9,6 +9,7 @@ public class ItemSelector : MonoBehaviour
 
     public void SelectItem(Item item)
     {
+        Debug.Log("Selecting item: " + item?.Name);
         _selectedItemValue.Value = item;
         _itemSelectedEvent?.Raise();
     }

@@ -17,7 +17,7 @@ public abstract class GenericGameEventListener<T> : SerializedMonoBehaviour
 
     private void OnDisable()
     {
-        _triggerEvent.UnregisterListener(this);
+        _triggerEvent?.UnregisterListener(this);
     }
 
     public void OnEventRaised(T arg)

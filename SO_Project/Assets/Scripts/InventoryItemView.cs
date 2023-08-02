@@ -14,7 +14,6 @@ public class InventoryItemView : MonoBehaviour
     private ItemSelector _itemSelector;
 
     private Item _item;
-    private bool _selected = false;
 
     private void Awake()
     {
@@ -44,13 +43,6 @@ public class InventoryItemView : MonoBehaviour
 
     private void OnButtonClicked()
     {
-        SetSelected(!_selected);
-    }
-
-    private void SetSelected(bool selected)
-    {
-        _selected = selected;
-        Item item = selected ? _item : null;
-        _itemSelector.SelectItem(item);
+        _itemSelector.SelectItem(_item);
     }
 }
