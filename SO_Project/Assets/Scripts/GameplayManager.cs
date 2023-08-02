@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameplayManager : SerializedMonoBehaviour
@@ -6,11 +7,13 @@ public class GameplayManager : SerializedMonoBehaviour
     [SerializeField]
     private IResetable[] _resetables;
 
-    [SerializeField]
-    private DemandPointAvatar[] _demandPointAvatars;
+    private List<DemandPointAvatar> _demandPointAvatars = new List<DemandPointAvatar>();
 
     [SerializeField]
     private ItemSpawner[] _itemSpawners;
+
+    //TODO could be replaced with enum or even SO for easy extension to more gameplay states
+    private bool _gameStarted;
 
     private void Start()
     {
@@ -20,6 +23,8 @@ public class GameplayManager : SerializedMonoBehaviour
 
     private void StartGame()
     {
+        _gameStarted = true;
+
         foreach (DemandPointAvatar demandPointAvatar in _demandPointAvatars)
         {
             demandPointAvatar.Initialize();
@@ -37,6 +42,16 @@ public class GameplayManager : SerializedMonoBehaviour
         foreach (IResetable resetable in _resetables)
         {
             resetable.ResetMe();
+        }
+    }
+
+    public void RegisterDemandPointAvatar(DemandPointAvatar avatar)
+    {
+        _demandPointAvatars.Add(avatar);
+
+        if (_gameStarted)
+        {
+            avatar.Activate();
         }
     }
 }

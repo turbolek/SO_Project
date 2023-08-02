@@ -7,10 +7,17 @@ public class DemandPointAvatar : MonoBehaviour
     [SerializeField]
     private GameEvent _itemDeliveredEvent;
     [SerializeField]
+    private DemandPointAvatarGameEvent _avatarSpawnedEvent;
+    [SerializeField]
     private DemandBubble _bubble;
 
     private DemandPoint _demandPoint;
     public DemandPoint DemandPoint => _demandPoint;
+
+    private void Awake()
+    {
+        _avatarSpawnedEvent?.Raise(this);
+    }
 
     public void Initialize()
     {
