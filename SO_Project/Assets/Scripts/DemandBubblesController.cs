@@ -10,7 +10,6 @@ public class DemandBubblesController : MonoBehaviour
     private CameraValue _gameplayCamera;
     [SerializeField]
     private DemandPointAvatarCollection _demandPointAvatarCollection;
-
     private Dictionary<DemandPoint, DemandBubble> _bubblesDictionary;
 
     private void Awake()
@@ -22,7 +21,6 @@ public class DemandBubblesController : MonoBehaviour
     {
         DemandBubble bubble = null;
 
-        //TODO use object pool
         if (_bubblesDictionary.ContainsKey(demandPoint))
         {
             bubble = _bubblesDictionary[demandPoint];
