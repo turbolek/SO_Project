@@ -4,7 +4,22 @@
 public class ItemValue : ResetableScriptableObject
 {
     public readonly ItemValue DefaultState;
-    public Item Value;
+    [SerializeField]
+    private Item _value;
+    public Item Value
+    {
+        get
+        {
+            return _value;
+        }
+        set
+        {
+            _value = value;
+            ItemChangedEvent?.Raise(value);
+        }
+    }
+
+    public ItemGameEvent ItemChangedEvent;
 
     public override void ResetMe()
     {
