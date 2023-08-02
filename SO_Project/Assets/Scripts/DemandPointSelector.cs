@@ -5,11 +5,9 @@ using UnityEngine;
 public class DemandPointSelector : MonoBehaviour
 {
     [SerializeField]
-    private DemandPointValue _selectedDemandPoint;
+    private DemandPointAvatarGameEvent _avatarSelectedEvent;
     [SerializeField]
     private ItemValue _selectedItem;
-    [SerializeField]
-    private VoidGameEvent _demandPointSelectedEvent;
     [SerializeField]
     private CameraValue _gameplayCamera;
     [SerializeField]
@@ -19,26 +17,21 @@ public class DemandPointSelector : MonoBehaviour
 
     public void SelectDemandPoint()
     {
-        _selectedDemandPoint.Value = GetDemandPoint();
-        _demandPointSelectedEvent?.Raise();
+        _avatarSelectedEvent?.Raise(GetDemandPointAvatar());
     }
 
-    private DemandPoint GetDemandPoint()
+    private DemandPointAvatar GetDemandPointAvatar()
     {
-        DemandPoint demandPoint = null;
+        DemandPointAvatar avatar = null;
 
         _ray = _gameplayCamera.Value.ScreenPointToRay(_mousePosition.Value);
 
         if (Physics.Raycast(_ray, out RaycastHit hitInfo))
         {
-            DemandPointAvatar avatar = hitInfo.transform.GetComponentInParent<DemandPointAvatar>();
-            if (avatar != null)
-            {
-                demandPoint = avatar.DemandPoint;
-            }
+            avatar = hitInfo.transform.GetComponentInParent<DemandPointAvatar>();
         }
 
-        return demandPoint;
+        return avatar;
     }
 
     private void OnDrawGizmos()

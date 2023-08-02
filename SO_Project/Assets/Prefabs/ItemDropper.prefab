@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6011054223993442601}
   - component: {fileID: 8143926685256717323}
-  - component: {fileID: 3299028251664751713}
+  - component: {fileID: 4940738397727573124}
   m_Layer: 0
   m_Name: ItemDropper
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8143926685256717323
 MonoBehaviour:
@@ -46,8 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selectedItem: {fileID: 11400000, guid: dca2ccce00531184ca05a25d94fb1fd7, type: 2}
-  _selectedDemandPoint: {fileID: 11400000, guid: c550edbe968324f4eb09cf8d84f1c3f9, type: 2}
---- !u!114 &3299028251664751713
+--- !u!114 &4940738397727573124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,9 +55,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 7692374325030877249}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66b3dce0c01476499dc8ed76625ae3b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c1526bef08904c4a825f0664a6371d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   _triggerEvent: {fileID: 11400000, guid: 2b49db5917be04e4c9837ed085e745a7, type: 2}
   _responseEvent:
     m_PersistentCalls:
@@ -66,7 +74,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8143926685256717323}
         m_TargetAssemblyTypeName: ItemDropper, Assembly-CSharp
         m_MethodName: DropItem
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

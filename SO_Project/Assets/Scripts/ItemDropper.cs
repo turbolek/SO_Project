@@ -6,14 +6,12 @@ public class ItemDropper : MonoBehaviour
 {
     [SerializeField]
     private ItemValue _selectedItem;
-    [SerializeField]
-    private DemandPointValue _selectedDemandPoint;
 
-    public void DropItem()
+    public void DropItem(DemandPointAvatar avatar)
     {
-        if (_selectedItem.Value != null && _selectedDemandPoint.Value != null)
+        if (_selectedItem.Value != null && avatar != null)
         {
-            _selectedDemandPoint.Value.DeliverItem(_selectedItem.Value);
+            avatar.DemandPoint.DeliverItem(_selectedItem.Value);
         }
     }
 }
