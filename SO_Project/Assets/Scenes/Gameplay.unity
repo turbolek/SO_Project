@@ -261,11 +261,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!4 &1022029430 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3881109621870202109, guid: 5246aa4956b5306408a2a789677e7a6b, type: 3}
-  m_PrefabInstance: {fileID: 7761116515711870212}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1264719356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -405,8 +400,7 @@ Transform:
   m_LocalPosition: {x: 0.15342624, y: 1.2054313, z: -4.4137864}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1022029430}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -810,7 +804,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1788348553}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2897602610473424881, guid: 5246aa4956b5306408a2a789677e7a6b, type: 3}
       propertyPath: m_Name
@@ -818,7 +812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3881109621870202109, guid: 5246aa4956b5306408a2a789677e7a6b, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3881109621870202109, guid: 5246aa4956b5306408a2a789677e7a6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -860,22 +854,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4745360074948976067, guid: 5246aa4956b5306408a2a789677e7a6b, type: 3}
-      propertyPath: _camera
-      value: 
-      objectReference: {fileID: 1788348552}
-    - target: {fileID: 4745360074948976067, guid: 5246aa4956b5306408a2a789677e7a6b, type: 3}
-      propertyPath: _selectedItem
-      value: 
-      objectReference: {fileID: 11400000, guid: dca2ccce00531184ca05a25d94fb1fd7, type: 2}
-    - target: {fileID: 4745360074948976067, guid: 5246aa4956b5306408a2a789677e7a6b, type: 3}
-      propertyPath: _selectedDemandPoint
-      value: 
-      objectReference: {fileID: 11400000, guid: c550edbe968324f4eb09cf8d84f1c3f9, type: 2}
-    - target: {fileID: 4745360074948976067, guid: 5246aa4956b5306408a2a789677e7a6b, type: 3}
-      propertyPath: _demandPointSelectedEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 2b49db5917be04e4c9837ed085e745a7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5246aa4956b5306408a2a789677e7a6b, type: 3}
 --- !u!1001 &7830555614948596118

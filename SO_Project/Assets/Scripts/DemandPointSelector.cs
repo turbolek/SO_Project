@@ -11,30 +11,23 @@ public class DemandPointSelector : MonoBehaviour
     [SerializeField]
     private VoidGameEvent _demandPointSelectedEvent;
     [SerializeField]
-    private Camera _camera;
+    private CameraValue _gameplayCamera;
+    [SerializeField]
+    private Vector3Value _mousePosition;
 
     private Ray _ray;
 
-    private void Update()
+    public void SelectDemandPoint()
     {
-        if (_selectedItem.Value != null)
-        {
-            /* TODO use Unity Input system for event based logic instead of Update
-             * Input system variables and events could also be handled by SOs to avoid rigid references 
-             */
-            if (Input.GetMouseButtonUp(0))
-            {
-                _selectedDemandPoint.Value = GetDemandPoint();
-                _demandPointSelectedEvent?.Raise();
-            }
-        }
+        _selectedDemandPoint.Value = GetDemandPoint();
+        _demandPointSelectedEvent?.Raise();
     }
 
     private DemandPoint GetDemandPoint()
     {
         DemandPoint demandPoint = null;
 
-        _ray = _camera.ScreenPointToRay(Input.mousePosition);
+        _ray = _gameplayCamera.Value.ScreenPointToRay(_mousePosition.Value);
 
         if (Physics.Raycast(_ray, out RaycastHit hitInfo))
         {

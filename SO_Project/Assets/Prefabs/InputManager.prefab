@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mousePosition: {fileID: 11400000, guid: 5edccf0bbb66d34498749c7e0c3d384d, type: 2}
+  _leftClickEvent: {fileID: 11400000, guid: 6db66e0c8190b75418db0361cbf31c52, type: 2}
