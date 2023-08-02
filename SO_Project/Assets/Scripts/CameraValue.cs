@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName ="Camera Value",menuName = "Custom SO/Variables/Camera")]
 public class CameraValue : ResetableScriptableObject
 {
     public Camera Value;

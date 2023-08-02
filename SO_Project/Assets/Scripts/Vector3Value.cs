@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "Vector3", menuName = "Custom SO/Variables/Vector3")]
+
 public class Vector3Value : ResetableScriptableObject
 {
     public readonly Vector3Value DefaultState;

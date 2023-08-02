@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "Item Value", menuName = "Custom SO/Variables/Item Value")]
 public class ItemValue : ResetableScriptableObject
 {
     public readonly ItemValue DefaultState;

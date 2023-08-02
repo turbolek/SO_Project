@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "Void Event", menuName = "Custom SO/Events/Void Event")]
 public class VoidGameEvent : ScriptableObject
 {
     private List<VoidGameEventListener> _listeners = new List<VoidGameEventListener>();

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "Demand Point", menuName = "Custom SO/Variables/Demand Point")]
 public class DemandPointValue : ResetableScriptableObject
 {
     public DemandPoint Value;

@@ -1,6 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "Integer", menuName = "Custom SO/Variables/Integer")]
+
 public class IntValue : ResetableScriptableObject
 {
     public readonly IntValue DefaultState;

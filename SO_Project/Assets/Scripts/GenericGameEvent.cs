@@ -1,9 +1,6 @@
 using Sirenix.OdinInspector;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-[CreateAssetMenu]
 public abstract class GenericGameEvent<T> : SerializedScriptableObject
 {
     private List<GenericGameEventListener<T>> _listeners = new List<GenericGameEventListener<T>>();

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "Item Spawn Data", menuName = "Custom SO/Variables/Item Spawn Data")]
 public class ItemSpawnData : ScriptableObject
 {
     public Item Item;

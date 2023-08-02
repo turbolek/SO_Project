@@ -1,7 +1,8 @@
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "Inventory", menuName = "Custom SO/Variables/Inventory")]
+
 public class Inventory : ResetableScriptableObject
 {
     public readonly Inventory DefaultState;
