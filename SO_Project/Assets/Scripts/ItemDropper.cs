@@ -12,6 +12,7 @@ public class ItemDropper : MonoBehaviour
         if (_selectedItem.Value != null && avatar != null)
         {
             avatar.DemandPoint.DeliverItem(_selectedItem.Value);
+            _selectedItem.Value = null;
         }
     }
 }

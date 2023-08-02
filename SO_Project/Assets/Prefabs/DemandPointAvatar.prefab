@@ -143,7 +143,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 257ebfd7cc9990e4793db2a3a14d2bd9, type: 2}
-  _itemDeliveredEvent: {fileID: 11400000, guid: 7ee8f128fb21f74459bad2f7c067e6f0, type: 2}
+  _avatarCollection: {fileID: 11400000, guid: acc5c92278ca76c4d8e0a968056041bb, type: 2}
   _avatarSpawnedEvent: {fileID: 11400000, guid: 27b90d847ba092b46a8080f85a77a5a6, type: 2}
-  _demandStartedEvent: {fileID: 11400000, guid: 5bbb7e2f0f777524483030febec59198, type: 2}
-  _demandCompletedEvent: {fileID: 11400000, guid: 2905daaea020f53448b61766aea35ac5, type: 2}

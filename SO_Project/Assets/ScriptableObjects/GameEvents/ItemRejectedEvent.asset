@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6832042cd55347f4eb5c3ee60adaec42, type: 3}
-  m_Name: ItemDeliveredEvent
+  m_Name: ItemRejectedEvent
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2

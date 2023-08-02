@@ -67,7 +67,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _triggerEvent: {fileID: 11400000, guid: 2b49db5917be04e4c9837ed085e745a7, type: 2}
+  _triggerEvent: {fileID: 11400000, guid: 4ebf2d064e02e9348b74d324246e7b2d, type: 2}
   _responseEvent:
     m_PersistentCalls:
       m_Calls:

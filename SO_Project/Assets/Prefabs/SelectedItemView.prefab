@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 5837609619660803347}
-  _mousePosition: {fileID: 0}
+  _mousePosition: {fileID: 11400000, guid: 5edccf0bbb66d34498749c7e0c3d384d, type: 2}
 --- !u!114 &5837609619660803350
 MonoBehaviour:
   m_ObjectHideFlags: 0

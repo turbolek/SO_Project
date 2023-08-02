@@ -6,38 +6,43 @@ public class DemandBubblesController : MonoBehaviour
 {
     [SerializeField]
     private DemandBubble _demandBubblePrefab;
-
     [SerializeField]
     private CameraValue _gameplayCamera;
+    [SerializeField]
+    private DemandPointAvatarCollection _demandPointAvatarCollection;
 
-    private Dictionary<DemandPointAvatar, DemandBubble> _bubblesDictionary;
+    private Dictionary<DemandPoint, DemandBubble> _bubblesDictionary;
 
     private void Awake()
     {
-        _bubblesDictionary = new Dictionary<DemandPointAvatar, DemandBubble>();
+        _bubblesDictionary = new Dictionary<DemandPoint, DemandBubble>();
     }
 
-    public void ShowBubbleForAvatar(DemandPointAvatar avatar)
+    public void ShowBubbleForDemandPoint(DemandPoint demandPoint)
     {
         DemandBubble bubble = null;
 
         //TODO use object pool
-        if (_bubblesDictionary.ContainsKey(avatar))
+        if (_bubblesDictionary.ContainsKey(demandPoint))
         {
-            bubble = _bubblesDictionary[avatar];
+            bubble = _bubblesDictionary[demandPoint];
         }
 
         if (bubble == null)
         {
             bubble = Instantiate(_demandBubblePrefab, transform);
-            _bubblesDictionary.Add(avatar, bubble);
+            _bubblesDictionary.Add(demandPoint, bubble);
         }
 
-        bubble.transform.position = _gameplayCamera.Value != null ? _gameplayCamera.Value.WorldToScreenPoint(avatar.transform.position) : Vector3.zero;
-        bubble.Show(avatar.Data.DemandData);
+        DemandPointAvatar avatar = _demandPointAvatarCollection.Value[demandPoint];
+        bubble.transform.position = _gameplayCamera.Value != null && avatar != null ? 
+                                    _gameplayCamera.Value.WorldToScreenPoint(avatar.transform.position) 
+                                    : Vector3.zero;
+
+        bubble.Show(demandPoint.Data.DemandData);
     }
 
-    public void HideBubbleForAvatar(DemandPointAvatar avatar)
+    public void HideBubbleForDemandPoint(DemandPoint avatar)
     {
         if (_bubblesDictionary.ContainsKey(avatar))
         {

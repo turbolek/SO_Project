@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5591111686250161352}
   - component: {fileID: 5591111686250161353}
-  - component: {fileID: 8475234616656691149}
-  - component: {fileID: 889220521370362932}
+  - component: {fileID: 5935910647106947986}
+  - component: {fileID: 2546433146910058033}
   m_Layer: 5
   m_Name: DemandBubblesController
   m_TagString: Untagged
@@ -53,7 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _demandBubblePrefab: {fileID: 6390029404312555215, guid: 92ca0b48076525747a08f29dc1bbf3ca, type: 3}
   _gameplayCamera: {fileID: 11400000, guid: 4fcd8059b3f4f274d98039be12d5a7c0, type: 2}
---- !u!114 &8475234616656691149
+  _demandPointAvatarCollection: {fileID: 11400000, guid: acc5c92278ca76c4d8e0a968056041bb, type: 2}
+--- !u!114 &5935910647106947986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,44 +63,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5591111686250161359}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c1526bef08904c4a825f0664a6371d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _triggerEvent: {fileID: 11400000, guid: 5bbb7e2f0f777524483030febec59198, type: 2}
-  _responseEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5591111686250161353}
-        m_TargetAssemblyTypeName: DemandBubblesController, Assembly-CSharp
-        m_MethodName: ShowBubbleForAvatar
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &889220521370362932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5591111686250161359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c1526bef08904c4a825f0664a6371d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 389bbde5252608d4989cbffbe7b46545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -117,7 +81,44 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5591111686250161353}
         m_TargetAssemblyTypeName: DemandBubblesController, Assembly-CSharp
-        m_MethodName: ShowBubbleForAvatar
+        m_MethodName: HideBubbleForDemandPoint
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2546433146910058033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5591111686250161359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389bbde5252608d4989cbffbe7b46545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _triggerEvent: {fileID: 11400000, guid: 5bbb7e2f0f777524483030febec59198, type: 2}
+  _responseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5591111686250161353}
+        m_TargetAssemblyTypeName: DemandBubblesController, Assembly-CSharp
+        m_MethodName: ShowBubbleForDemandPoint
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

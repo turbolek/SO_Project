@@ -596,10 +596,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 290751098}
     m_Modifications:
-    - target: {fileID: 5837609619660803345, guid: 9a01cf6ed351c2144a6afb89ff1658d3, type: 3}
-      propertyPath: _mousePosition
-      value: 
-      objectReference: {fileID: 11400000, guid: 5edccf0bbb66d34498749c7e0c3d384d, type: 2}
     - target: {fileID: 5837609619660803346, guid: 9a01cf6ed351c2144a6afb89ff1658d3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

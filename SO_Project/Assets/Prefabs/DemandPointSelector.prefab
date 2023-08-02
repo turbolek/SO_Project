@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116ab1842acbc394f8338b78dd29c6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _avatarSelectedEvent: {fileID: 11400000, guid: 2b49db5917be04e4c9837ed085e745a7, type: 2}
+  _avatarSelectedEvent: {fileID: 11400000, guid: 4ebf2d064e02e9348b74d324246e7b2d, type: 2}
   _selectedItem: {fileID: 11400000, guid: dca2ccce00531184ca05a25d94fb1fd7, type: 2}
   _gameplayCamera: {fileID: 11400000, guid: 4fcd8059b3f4f274d98039be12d5a7c0, type: 2}
   _mousePosition: {fileID: 11400000, guid: 5edccf0bbb66d34498749c7e0c3d384d, type: 2}

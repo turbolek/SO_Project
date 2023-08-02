@@ -7,4 +7,9 @@ public class DemandPointData : ScriptableObject
 {
     public string Name;
     public DemandData DemandData;
+
+    public DemandPointGameEvent DemandStartedEvent;
+    public DemandPointGameEvent DemandCompletedEvent;
+    public ItemGameEvent ItemRejectedEvent;
+    public ItemGameEvent ItemDeliveredEvent;
 }

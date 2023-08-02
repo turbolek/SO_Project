@@ -51,6 +51,10 @@ public class GameplayManager : SerializedMonoBehaviour
 
         if (_gameStarted)
         {
+            //Handle avatars spawned after the game was started.
+            //In case when gameplay starts automatically (in Start, Awake etc.),
+            //this makes it immune to race condition between gameplay start and avatar init
+            avatar.Initialize();
             avatar.Activate();
         }
     }

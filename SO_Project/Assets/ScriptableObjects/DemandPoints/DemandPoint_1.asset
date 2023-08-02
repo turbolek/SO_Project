@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Point 1
   DemandData: {fileID: 11400000, guid: 0538a45530b565949af8c0d76fa7648f, type: 2}
+  DemandStartedEvent: {fileID: 11400000, guid: 5bbb7e2f0f777524483030febec59198, type: 2}
+  DemandCompletedEvent: {fileID: 11400000, guid: 2905daaea020f53448b61766aea35ac5, type: 2}
+  ItemRejectedEvent: {fileID: 11400000, guid: 26ea17e6bca2d404bb07ba24f87ce550, type: 2}
+  ItemDeliveredEvent: {fileID: 11400000, guid: 7ee8f128fb21f74459bad2f7c067e6f0, type: 2}
